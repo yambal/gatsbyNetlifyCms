@@ -10,12 +10,14 @@ collections:
     label: "名言"
     folder: "src/pages/quotation"
     create: true
+    identifier_field: slag
     slug: "quotation-{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "公開日", name: "date", widget: "datetime"}
       - {label: "名言", name: "quotation", widget: "text"}
       - {label: "人", name: "person", widget: "text"}
       - {label: "人物像", name: "image", widget: image}
+      - {label: "Slug", name: "slag", widget: text}
 
   - name: "blog"
     label: "Blog"
