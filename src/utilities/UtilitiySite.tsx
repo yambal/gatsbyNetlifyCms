@@ -3,7 +3,8 @@ import { graphql, useStaticQuery } from 'gatsby'
 type tSiteMetaData = {
   title: string
   description: string
-  lang: string
+  lang: string,
+  fontAwesomeId?: string
 }
 
 class UtilitySite {
@@ -15,7 +16,8 @@ class UtilitySite {
             siteMetadata {
               title
               description,
-              lang
+              lang,
+              fontAwesomeId
             }
           }
         }

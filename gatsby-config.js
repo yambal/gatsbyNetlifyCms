@@ -5,7 +5,8 @@ module.exports = {
     title: 'WWW.YAMBAL.NET',
     description:
       'description',
-    lang: 'ja'
+    lang: 'ja',
+    fontAwesomeId: '19c9308f7b'
   },
   plugins: [
     {
