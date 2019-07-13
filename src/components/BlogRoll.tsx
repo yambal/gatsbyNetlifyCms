@@ -3,49 +3,55 @@ import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 interface iBlogRollProps {
-  data?: any
+  data?: {
+    allMarkdownRemark:{
+      edges: {
+        node: {
+          frontmatter: any
+          title: string
+          excerpt: string
+          fields: {
+            slug: string
+          }
+        }
+      }[]
+    }
+  }
   count?: any
 }
 
 const BlogRoll:React.SFC<iBlogRollProps> = (props) => {
-  const { data } = props
-  const { edges: posts } = data.allMarkdownRemark
+  const { edges: posts } = props.data.allMarkdownRemark
 
   return (
-    <div className="columns is-multiline">
+    <div>
       {posts &&
-        posts.map(({ node: post }) => (
-          <article>
-            <header>
-              {post.frontmatter.featuredimage ? (
-                <PreviewCompatibleImage
-                  imageInfo={{
-                    image: post.frontmatter.featuredimage,
-                    alt: `featured image thumbnail for post ${
-                      post.title
-                    }`,
-                  }}
-                />
-              ) : null}
-                <Link
-                  className="title has-text-primary is-size-4"
-                  to={post.fields.slug}
-                >
-                  {post.frontmatter.title}
+        posts.map(({ node: post }) => {
+          const { excerpt } = post
+          const { title, date, featuredimage } = post.frontmatter
+          return(
+            <article>
+              <header>
+                {post.frontmatter.featuredimage ? (
+                  <PreviewCompatibleImage
+                    imageInfo={{
+                      image: featuredimage,
+                      alt: `${post.title}`,
+                    }}
+                  />
+                ) : null}
+                  <h4><Link to={post.fields.slug}>{title}</Link></h4>
+                  <span>{date}</span>
+              </header>
+              <p>
+                {excerpt}
+                <Link className="button" to={post.fields.slug}>
+                  Keep Reading →
                 </Link>
-                <span> &bull; </span>
-                <span className="subtitle is-size-5 is-block">
-                  {post.frontmatter.date}
-                </span>
-            </header>
-            <p>
-              {post.excerpt}
-              <Link className="button" to={post.fields.slug}>
-                Keep Reading →
-              </Link>
-            </p>
-          </article>
-        ))}
+              </p>
+            </article>
+          )
+        })}
     </div>
   )
 }

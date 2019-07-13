@@ -4,6 +4,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Container from '../components/Container';
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
+import BlogRoll from '../components/BlogRoll';
 
 interface iIndexPageProps {
   pageResources: any
@@ -63,10 +64,13 @@ const IndexPage:React.SFC<iIndexPageProps> = (props) => {
             <hr />
           </div>
         ))}
-        
+
+        <h3>BlogRoll</h3>
+        <BlogRoll />
         <Link className="btn" to="/blog">
           Read more
         </Link>
+
       </Container>
     </Layout>
   )
