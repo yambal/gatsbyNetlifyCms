@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Container from './Container';
-import IconBlog from './iconBlog';
+import IconBlog from './IconBlog';
 import IconContact from './IconContact';
 import IconCube from './IconCube';
 import IconBuilding from './IconBuilding';
