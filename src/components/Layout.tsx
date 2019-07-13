@@ -43,6 +43,12 @@ const TemplateWrapper:React.SFC = ({ children }) => {
           rel="stylesheet"
         />
 
+        {siteMetadata.fontAwesomeId && 
+          <script
+            src={`https://kit.fontawesome.com/${siteMetadata.fontAwesomeId}.js`}
+          />
+        }
+
         {/** TODO */ false &&
           <>
             <meta property="og:type" content="business.business" />
