@@ -1,6 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import Footer from './Footer'
+import Navbar from './Navbar'
 import '../css/dist/layout.scss'
 import Utilities from '../utilities/utility'
 
@@ -19,6 +20,7 @@ const TemplateWrapper:React.SFC = ({ children }) => {
         <meta name="theme-color" content="#fff" />
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP|Noto+Serif+JP|Source+Code+Pro&display=swap" rel="stylesheet" />
       </Helmet>
+      <Navbar />
       <div>{children}</div>
       <Footer />
     </React.Fragment>
