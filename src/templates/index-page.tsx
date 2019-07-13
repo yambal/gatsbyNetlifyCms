@@ -13,7 +13,7 @@ interface iIndexPageProps {
 const IndexPage:React.SFC<iIndexPageProps> = (props) => {
   return (
     <Layout>
-      <pre>{JSON.stringify(props, null, 2)}</pre>
+      <pre>{JSON.stringify(props.data, null, 2)}</pre>
     </Layout>
   )
 }
