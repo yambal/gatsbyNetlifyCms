@@ -1,6 +1,10 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Container from './Container';
+import IconBlog from './iconBlog';
+import IconContact from './IconContact';
+import IconCube from './IconCube';
+import IconBuilding from './IconBuilding';
 
 interface iNavbarProps {
   className?: any
@@ -22,16 +26,16 @@ const Navbar:React.SFC<iNavbarProps> = (props) => {
         <div>
           <div className="navbar-start has-text-centered">
             <Link className="navbar-item" to="/about">
-              About
+              <IconBuilding/> About
             </Link>
             <Link className="navbar-item" to="/products">
-              Products
+              <IconCube/> Products
             </Link>
             <Link className="navbar-item" to="/blog">
-              Blog
+              <IconBlog/> Blog
             </Link>
             <Link className="navbar-item" to="/contact">
-              Contact
+              <IconContact /> Contact
             </Link>
             <Link className="navbar-item" to="/contact/examples">
               Form Examples

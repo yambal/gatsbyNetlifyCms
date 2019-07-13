@@ -42,6 +42,9 @@ const TemplateWrapper:React.SFC = ({ children }) => {
           href="https://fonts.googleapis.com/css?family=Noto+Sans+JP|Noto+Serif+JP|Source+Code+Pro&display=swap"
           rel="stylesheet"
         />
+        <script
+          src="https://kit.fontawesome.com/19c9308f7b.js"
+        />
 
         {/** TODO */ false &&
           <>
