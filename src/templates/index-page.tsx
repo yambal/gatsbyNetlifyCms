@@ -3,10 +3,17 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 
-const IndexPage = (props) => {
+interface iIndexPageProps {
+  pageResources: any
+  data: any
+  pageContext: any
+  pathContext: any
+}
+
+const IndexPage:React.SFC<iIndexPageProps> = (props) => {
   return (
     <Layout>
-      <pre>{JSON.stringify(props)}</pre>
+      <pre>{JSON.stringify(props, null, 2)}</pre>
     </Layout>
   )
 }
