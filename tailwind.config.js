@@ -221,16 +221,25 @@ module.exports = {
     },
     fontFamily: {
       sans: [
-        "'Noto Sans JP'",
-        'sans-serif'
+        '-apple-system',
+        'BlinkMacSystemFont',
+        '"Segoe UI"',
+        'Roboto',
+        '"Helvetica Neue"',
+        'Arial',
+        '"Noto Sans"',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+        '"Noto Color Emoji"',
       ],
       serif: [
-        "'Noto Serif JP'",
-        'serif'
-      ],
-      code: [
-        "'Source Code Pro'",
-        'monospace'
+        'Georgia',
+        'Cambria',
+        '"Times New Roman"',
+        'Times',
+        'serif',
       ],
       mono: [
         'Menlo',
@@ -475,15 +484,5 @@ module.exports = {
     zIndex: ['responsive'],
   },
   corePlugins: {},
-  plugins: [
-    ({ addBase, theme }) => {
-      const fontFamily = theme('fontFamily', {})
-      console.log(fontFamily)
-      addBase({
-        'html': {
-          fontFamily: fontFamily.sans.join(', ')
-        }
-      })
-    }
-  ],
+  plugins: [],
 }
