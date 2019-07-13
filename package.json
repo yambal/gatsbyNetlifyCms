@@ -31,6 +31,7 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
+    "tailwindcss": "^1.0.5",
     "uuid": "^3.2.1"
   },
   "keywords": [
@@ -46,10 +47,11 @@
     "build:app": "npm run clean && gatsby build",
     "build:lambda": "netlify-lambda build src/lambda",
     "build": "run-p build:**",
-    "develop": "npm run clean && gatsby develop",
+    "develop": "npm run clean && yarn run build:css && gatsby develop",
     "serve": "gatsby serve",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css" : "yarn tailwind build src/css/base.scss -o src/css/dist/layout.scss -c tailwind.config.js"
   },
   "devDependencies": {
     "@types/node": "^12.6.2",
