@@ -1,18 +1,18 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
+import Footer from './Footer'
+import Navbar from './Navbar'
 import './all.sass'
-import useSiteMetadata from './SiteMetadata'
+import UtilitiySite from '../utilities/UtilitiySite'
 
-const TemplateWrapper = ({ children }) => {
-  const { title, description } = useSiteMetadata()
+const TemplateWrapper:React.SFC = ({ children }) => {
+  const siteMetadata = UtilitiySite.siteMetaData()
   return (
-    <div>
+    <React.Fragment>
       <Helmet>
-        <html lang="en" />
-        <title>{title}</title>
-        <meta name="description" content={description} />
+        <html lang={siteMetadata.lang} />
+        <title>{siteMetadata.title}</title>
+        <meta name="description" content={siteMetadata.description} />
 
         <link
           rel="apple-touch-icon"
@@ -40,14 +40,14 @@ const TemplateWrapper = ({ children }) => {
         <meta name="theme-color" content="#fff" />
 
         <meta property="og:type" content="business.business" />
-        <meta property="og:title" content={title} />
+        <meta property="og:title" content={siteMetadata.title} />
         <meta property="og:url" content="/" />
         <meta property="og:image" content="/img/og-image.jpg" />
       </Helmet>
       <Navbar />
       <div>{children}</div>
       <Footer />
-    </div>
+    </React.Fragment>
   )
 }
 
