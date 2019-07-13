@@ -34,23 +34,11 @@ exports.createPages = ({ actions, graphql }) => {
     posts.forEach(edge => {
       const id = edge.node.id
 
-      /** TODO */
-      console.log('templateKey', edge.node.frontmatter.templateKey)
-      let ext = "js"
-      if(
-        edge.node.frontmatter.templateKey === 'index-page'
-        || edge.node.frontmatter.templateKey === 'about-page'
-        || edge.node.frontmatter.templateKey === 'product-page'
-        || edge.node.frontmatter.templateKey === 'blog-post'
-      ){
-        ext = "tsx"
-      }
-
       createPage({
         path: edge.node.fields.slug,
         tags: edge.node.frontmatter.tags,
         component: path.resolve(
-          `src/templates/${String(edge.node.frontmatter.templateKey)}.${ext}`
+          `src/templates/${String(edge.node.frontmatter.templateKey)}.tsx`
         ),
         // additional data can be passed via context
         context: {
