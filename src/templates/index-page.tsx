@@ -1,9 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-
 import Layout from '../components/Layout'
 
-const IndexPage:React.SFC = props => {
+const IndexPage:React.SFC = (props) => {
   return (
     <Layout>
       <pre>{JSON.stringify(props, null, 2)}</pre>
