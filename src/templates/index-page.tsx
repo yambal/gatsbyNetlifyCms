@@ -1,19 +1,73 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
+import Container from '../components/Container';
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 
 interface iIndexPageProps {
   pageResources: any
-  data: any
+  data: {
+    markdownRemark: {
+      frontmatter: {
+        image: any
+        title: string
+        heading: string
+        subheading: string
+        mainpitch: {
+          title: string
+          description: string
+        }
+        description: string
+        intro: {
+          heading: string
+          description: string
+          blurbs: {
+            image: any
+            text: string
+          }[]
+        }
+      }
+    }
+  }
   pageContext: any
   pathContext: any
 }
 
 const IndexPage:React.SFC<iIndexPageProps> = (props) => {
+  const {
+    image,
+    title,
+    subheading,
+    mainpitch,
+    heading,
+    description,
+    intro
+  } = props.data.markdownRemark.frontmatter
   return (
     <Layout>
-      <pre>{JSON.stringify(props.data, null, 2)}</pre>
+      <Container>
+        <h1>{title}</h1>
+        <PreviewCompatibleImage imageInfo={image} />
+        <h3>{subheading}</h3>
+        <h1>{mainpitch.title}</h1>
+        <h3>{mainpitch.description}</h3>
+        <h3>{heading}</h3>
+        <p>{description}</p>
+        <h3>{intro.heading}</h3>
+        <p>{intro.description}</p>
+        {intro.blurbs.map((blurb, index) => (
+          <div key={`blurb-${index}`}>
+            <PreviewCompatibleImage imageInfo={blurb.image} />
+            <p>{blurb.text}</p>
+            <hr />
+          </div>
+        ))}
+        
+        <Link className="btn" to="/blog">
+          Read more
+        </Link>
+      </Container>
     </Layout>
   )
 }
