@@ -18,6 +18,7 @@ const TemplateWrapper:React.SFC = ({ children }) => {
         <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16"/>
         <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#ff4400"/>
         <meta name="theme-color" content="#fff" />
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP|Noto+Serif+JP|Source+Code+Pro&display=swap" rel="stylesheet" />
       </Helmet>
       <Navbar />
       <div>{children}</div>
