@@ -12,6 +12,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-typescript`,
     },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // https://www.gatsbyjs.org/packages/gatsby-plugin-styled-components/
+      },
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {

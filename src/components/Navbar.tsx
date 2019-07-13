@@ -5,6 +5,7 @@ import IconBlog from './IconBlog';
 import IconContact from './IconContact';
 import IconCube from './IconCube';
 import IconBuilding from './IconBuilding';
+import IconVilal from './IconVilal';
 
 interface iNavbarProps {
   className?: any
@@ -37,8 +38,8 @@ const Navbar:React.SFC<iNavbarProps> = (props) => {
             <Link className="navbar-item" to="/contact">
               <IconContact /> Contact
             </Link>
-            <Link className="navbar-item" to="/contact/examples">
-              Form Examples
+            <Link className="navbar-item" to="/contact/StyledComponentSample">
+              <IconVilal /> StyledComponent Sample
             </Link>
           </div>
         </div>
