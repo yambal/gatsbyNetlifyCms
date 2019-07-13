@@ -2,20 +2,13 @@
 templateKey: index-page
 title: 良心のある素晴らしいコーヒー
 image: /img/home-jumbotron.jpg
-heading: Great coffee with a conscience
-subheading: Support sustainable farming while enjoying a cup
+heading: 良心のある素晴らしいコーヒー
+subheading: ' カップを楽しみながら持続可能な農業を支援する'
 mainpitch:
-  title: Why Kaldi
-  description: >
-    Kaldi is the coffee store for everyone who believes that great coffee
-    shouldn't just taste good, it should do good too. We source all of our beans
-    directly from small scale sustainable farmers and make sure part of the
-    profits are reinvested in their communities.
-description: >-
-  Kaldi is the ultimate spot for coffee lovers who want to learn about their
-  java’s origin and support the farmers that grew it. We take coffee production,
-  roasting and brewing seriously and we’re glad to pass that knowledge to
-  anyone.
+  title: なぜカルディ
+  description: >-
+    Kaldiは、おいしいコーヒーだけではなく、おいしいコーヒーでもあると考える人々のためのコーヒーショップです。私たちはすべての豆を小規模の持続可能な農家から直接調達し、利益の一部が彼らの地域社会に確実に再投資されるようにします。
+description: ' カルディは、自分のジャワの起源について学び、それを育てた農家を支援したいコーヒー愛好家のための究極のスポットです。私たちはコーヒーの製造、焙煎、醸造を真剣に受け止めており、その知識を誰にでも伝えていただけることをうれしく思います'
 intro:
   blurbs:
     - image: /img/coffee.png
