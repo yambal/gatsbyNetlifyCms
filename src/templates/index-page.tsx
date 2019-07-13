@@ -1,23 +1,14 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 
-const IndexPage = props => {
+const IndexPage:React.SFC = props => {
   return (
     <Layout>
       <pre>{JSON.stringify(props, null, 2)}</pre>
     </Layout>
   )
-}
-
-IndexPage.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
-  }),
 }
 
 export default IndexPage
