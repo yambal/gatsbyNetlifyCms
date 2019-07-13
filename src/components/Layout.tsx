@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import Footer from './Footer'
 import Navbar from './Navbar'
-import './all.sass'
+import '../css/dist/layout.scss'
 import UtilitiySite from '../utilities/UtilitiySite'
 
 const TemplateWrapper:React.SFC = ({ children }) => {
@@ -39,10 +39,14 @@ const TemplateWrapper:React.SFC = ({ children }) => {
         />
         <meta name="theme-color" content="#fff" />
 
-        <meta property="og:type" content="business.business" />
-        <meta property="og:title" content={siteMetadata.title} />
-        <meta property="og:url" content="/" />
-        <meta property="og:image" content="/img/og-image.jpg" />
+        {/** TODO */ false &&
+          <>
+            <meta property="og:type" content="business.business" />
+            <meta property="og:title" content={siteMetadata.title} />
+            <meta property="og:url" content="/" />
+            <meta property="og:image" content="/img/og-image.jpg" />
+          </>
+        }
       </Helmet>
       <Navbar />
       <div>{children}</div>
