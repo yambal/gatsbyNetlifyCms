@@ -40,6 +40,7 @@ exports.createPages = ({ actions, graphql }) => {
       if(
         edge.node.frontmatter.templateKey === 'index-page'
         || edge.node.frontmatter.templateKey === 'about-page'
+        || edge.node.frontmatter.templateKey === 'blog-post'
       ){
         ext = "tsx"
       }
