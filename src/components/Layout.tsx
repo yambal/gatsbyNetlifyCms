@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import Footer from './Footer'
 import Navbar from './Navbar'
-import './all.sass'
+import '../css/dist/layout.scss'
 import Utilities from '../utilities/utility'
 
 const TemplateWrapper:React.SFC = ({ children }) => {
