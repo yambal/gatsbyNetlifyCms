@@ -33,12 +33,19 @@ exports.createPages = ({ actions, graphql }) => {
 
     posts.forEach(edge => {
       const id = edge.node.id
+
+      /** TODO */
       console.log('templateKey', edge.node.frontmatter.templateKey)
+      let ext = "js"
+      if(edge.node.frontmatter.templateKey === 'index-page'){
+        ext = "tsx"
+      }
+
       createPage({
         path: edge.node.fields.slug,
         tags: edge.node.frontmatter.tags,
         component: path.resolve(
-          `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
+          `src/templates/${String(edge.node.frontmatter.templateKey)}.${ext}`
         ),
         // additional data can be passed via context
         context: {
