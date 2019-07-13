@@ -38,6 +38,10 @@ const TemplateWrapper:React.SFC = ({ children }) => {
           color="#ff4400"
         />
         <meta name="theme-color" content="#fff" />
+        <link
+          href="https://fonts.googleapis.com/css?family=Noto+Sans+JP|Noto+Serif+JP|Source+Code+Pro&display=swap"
+          rel="stylesheet"
+        />
 
         {/** TODO */ false &&
           <>

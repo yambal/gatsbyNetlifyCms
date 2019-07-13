@@ -1,3 +1,5 @@
+const baseFontSizePx = 14
+
 module.exports = {
   prefix: '',
   important: false,
@@ -221,25 +223,16 @@ module.exports = {
     },
     fontFamily: {
       sans: [
-        '-apple-system',
-        'BlinkMacSystemFont',
-        '"Segoe UI"',
-        'Roboto',
-        '"Helvetica Neue"',
-        'Arial',
-        '"Noto Sans"',
-        'sans-serif',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-        '"Noto Color Emoji"',
+        "'Noto Sans JP'",
+        'sans-serif'
       ],
       serif: [
-        'Georgia',
-        'Cambria',
-        '"Times New Roman"',
-        'Times',
-        'serif',
+        "'Noto Serif JP'",
+        'serif'
+      ],
+      code: [
+        "'Source Code Pro'",
+        'monospace'
       ],
       mono: [
         'Menlo',
@@ -251,16 +244,7 @@ module.exports = {
       ],
     },
     fontSize: {
-      xs: '0.75rem',
-      sm: '0.875rem',
-      base: '1rem',
-      lg: '1.125rem',
-      xl: '1.25rem',
-      '2xl': '1.5rem',
-      '3xl': '1.875rem',
-      '4xl': '2.25rem',
-      '5xl': '3rem',
-      '6xl': '4rem',
+      base: `${baseFontSizePx}px`
     },
     fontWeight: {
       hairline: '100',
@@ -484,5 +468,19 @@ module.exports = {
     zIndex: ['responsive'],
   },
   corePlugins: {},
-  plugins: [],
+  plugins: [
+    ({ addBase, theme }) => {
+      const fontFamily = theme('fontFamily', {})
+      const fontSize = theme('fontSize', {})
+    addBase({
+      'html': {
+        fontFamily: fontFamily.sans.join(', '),
+        fontSize: fontSize.base 
+      },
+      'pre': {
+        fontFamily: fontFamily.code.join(', '),
+        overflowX: 'scroll'
+      }
+    })
+  }],
 }
