@@ -13,7 +13,6 @@ collections:
     identifier_field: slag
     slug: "quotation-{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "quotation"}
       - {label: "公開日", name: "date", widget: "datetime"}
       - {label: "名言", name: "quotation", widget: "text"}
       - {label: "人", name: "person", widget: "text"}
