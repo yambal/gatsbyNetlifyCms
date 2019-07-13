@@ -39,6 +39,7 @@ exports.createPages = ({ actions, graphql }) => {
       let ext = "js"
       if(
         edge.node.frontmatter.templateKey === 'index-page'
+        || edge.node.frontmatter.templateKey === 'about-page'
         || edge.node.frontmatter.templateKey === 'product-page'
         || edge.node.frontmatter.templateKey === 'blog-post'
       ){
