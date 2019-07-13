@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
+import Container from '../components/Container';
 
 interface iIndexPageProps {
   pageResources: any
@@ -13,7 +14,9 @@ interface iIndexPageProps {
 const IndexPage:React.SFC<iIndexPageProps> = (props) => {
   return (
     <Layout>
-      <pre>{JSON.stringify(props.data, null, 2)}</pre>
+      <Container>
+        <pre>{JSON.stringify(props.data, null, 2)}</pre>
+      </Container>
     </Layout>
   )
 }
