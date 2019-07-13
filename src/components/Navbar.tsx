@@ -13,7 +13,7 @@ const Navbar:React.SFC<iNavbarProps> = (props) => {
       aria-label="main-navigation"
       className={props.className}
     >
-      <Container id="navbarContainer">
+      <Container id="menubar">
         <div className="navbar-brand">
           <Link to="/" className="navbar-item" title="Logo">
             Home

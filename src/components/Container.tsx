@@ -1,5 +1,4 @@
 import React from 'react'
-import Utility from '../utilities/Utility'
 
 interface iContainerProps {
   id?: string
@@ -7,9 +6,10 @@ interface iContainerProps {
 }
 
 const Container:React.SFC<iContainerProps> = (props) => {
-  const className = Utility.classNameBuild(['container', 'px-20', 'mx-auto'], props.className)
+  const tailwindClasses = ['container', 'px-20', 'mx-auto']
+  const classNameClasses = props.className ? props.className.split(' ') : []
   return (
-    <div id={props.id} className={className}>
+    <div id={props.id} className={tailwindClasses.concat(classNameClasses).join(' ')}>
       {props.children}
     </div>
   )
