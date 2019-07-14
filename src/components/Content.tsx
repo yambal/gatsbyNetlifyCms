@@ -1,7 +1,7 @@
 import React from 'react'
 
 export interface iHTMLContentProps {
-  content: string
+  content: any
   className?: string
   isHtml: boolean
 }
