@@ -2,20 +2,17 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Container from '../components/Container';
-import Content, { HTMLContent } from '../components/Content';
+import { HTMLContent, iHTMLContentProps } from '../components/Content';
 
-interface AboutPageTemplateProps {
+interface iAboutPageTemplateProps extends iHTMLContentProps  {
   title: string
-  content: any
-  contentComponent: any
 }
 
-export const AboutPageTemplate:React.SFC<AboutPageTemplateProps> = ({ title, content, contentComponent }) => {
-  const PageContent = contentComponent || Content
+export const AboutPageTemplate:React.SFC<iAboutPageTemplateProps> = (props) => {
   return(
     <Container>
-      <h2>{title}</h2>
-      <PageContent className="content" content={content} />
+      <h2>{props.title}</h2>
+      <HTMLContent className={props.className} content={props.content} isHtml={props.isHtml}/>
     </Container>
   )
 }
@@ -40,7 +37,7 @@ const AboutPage:React.SFC<iAboutPageProps> = (props) => {
       <AboutPageTemplate
         title={props.data.markdownRemark.frontmatter.title}
         content={props.data.markdownRemark.html}
-        contentComponent={HTMLContent}
+        isHtml={true}
       />
     </Layout>
   )

@@ -1,15 +1,12 @@
 import React from 'react'
 
-interface iHTMLContentProps {
+export interface iHTMLContentProps {
   content: string
   className?: string
+  isHtml: boolean
 }
 export const HTMLContent:React.SFC<iHTMLContentProps> = (props) => (
-  <div className={props.className} dangerouslySetInnerHTML={{ __html: props.content }} />
+  props.isHtml
+    ? <div className={props.className} dangerouslySetInnerHTML={{ __html: props.content }} />
+    : <div className={props.className}>{props.content}</div>
 )
-
-const Content = ({ content, className }) => (
-  <div className={className}>{content}</div>
-)
-
-export default Content
