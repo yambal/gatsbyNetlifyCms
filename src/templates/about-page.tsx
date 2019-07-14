@@ -2,20 +2,23 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Container from '../components/Container';
-import { HTMLContent } from '../components/Content';
+import Content, { HTMLContent } from '../components/Content';
 
-const AboutPage:React.SFC<iAboutPageProps> = (props) => {
-  return (
-    <Layout>
-      <Container>
-        <h2>{props.data.markdownRemark.frontmatter.title}</h2>
-        <HTMLContent content={props.data.markdownRemark.html}/>
-      </Container>
-    </Layout>
-  )
+interface AboutPageTemplateProps {
+  title: string
+  content: any
+  contentComponent: any
 }
 
-export default AboutPage
+export const AboutPageTemplate:React.SFC<AboutPageTemplateProps> = ({ title, content, contentComponent }) => {
+  const PageContent = contentComponent || Content
+  return(
+    <Container>
+      <h2>{title}</h2>
+      <PageContent className="content" content={content} />
+    </Container>
+  )
+}
 
 interface iAboutPageProps{
   loaction: {
@@ -30,6 +33,20 @@ interface iAboutPageProps{
     }
   }
 }
+
+const AboutPage:React.SFC<iAboutPageProps> = (props) => {
+  return (
+    <Layout>
+      <AboutPageTemplate
+        title={props.data.markdownRemark.frontmatter.title}
+        content={props.data.markdownRemark.html}
+        contentComponent={HTMLContent}
+      />
+    </Layout>
+  )
+}
+
+export default AboutPage
 
 export const aboutPageQuery = graphql`
   query AboutPage($id: String!) {
