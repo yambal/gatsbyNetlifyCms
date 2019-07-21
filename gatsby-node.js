@@ -6,7 +6,6 @@ const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
-  /** マークダウンファイルを取得する */
   return graphql(`
     {
       allMarkdownRemark(limit: 1000) {
@@ -25,24 +24,23 @@ exports.createPages = ({ actions, graphql }) => {
       }
     }
   `).then(result => {
-
     if (result.errors) {
       result.errors.forEach(e => console.error(e.toString()))
       return Promise.reject(result.errors)
     }
 
-    // マークダウンファイルごとに
     const posts = result.data.allMarkdownRemark.edges
+
     posts.forEach(edge => {
       const id = edge.node.id
-      const templateKey: string = edge.node.frontmatter.templateKey
-      const templatePath: string = path.resolve(`src/templates/${templateKey}.tsx`)
 
-      // ページを生成する
       createPage({
         path: edge.node.fields.slug,
         tags: edge.node.frontmatter.tags,
-        component: templatePath,
+        component: path.resolve(
+          `src/templates/${String(edge.node.frontmatter.templateKey)}.tsx`
+        ),
+        // additional data can be passed via context
         context: {
           id,
         },
