@@ -25,6 +25,7 @@ exports.createPages = ({ actions, graphql }) => {
       }
     }
   `).then(result => {
+
     if (result.errors) {
       result.errors.forEach(e => console.error(e.toString()))
       return Promise.reject(result.errors)
@@ -34,15 +35,14 @@ exports.createPages = ({ actions, graphql }) => {
     const posts = result.data.allMarkdownRemark.edges
     posts.forEach(edge => {
       const id = edge.node.id
-      const templateKey = edge.node.frontmatter.templateKey
+      const templateKey: string = edge.node.frontmatter.templateKey
+      const templatePath: string = path.resolve(`src/templates/${templateKey}.tsx`)
 
+      // ページを生成する
       createPage({
         path: edge.node.fields.slug,
         tags: edge.node.frontmatter.tags,
-        component: path.resolve(
-          `src/templates/${String(templateKey)}.tsx`
-        ),
-        // additional data can be passed via context
+        component: templatePath,
         context: {
           id,
         },
