@@ -1,64 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-
 import Layout from '../components/Layout'
-import TemplateIndexPage from '../components/templates/TemplateIndexPage';
-
-interface iIndexPageProps {
-  pageResources: any
-  data: {
-    markdownRemark: {
-      frontmatter: {
-        image: any
-        title: string
-        heading: string
-        subheading: string
-        mainpitch: {
-          title: string
-          description: string
-        }
-        description: string
-        intro: {
-          heading: string
-          description: string
-          blurbs: {
-            image: any
-            text: string
-          }[]
-        }
-      }
-    }
-  }
-  pageContext: any
-  pathContext: any
-}
-
-const IndexPage:React.SFC<iIndexPageProps> = (props) => {
-  const {
-    image,
-    title,
-    subheading,
-    mainpitch,
-    heading,
-    description,
-    intro
-  } = props.data.markdownRemark.frontmatter
-  return (
-    <Layout>
-      <TemplateIndexPage
-        image={image}
-        title={title}
-        subheading={subheading}
-        mainpitch={mainpitch}
-        heading={heading}
-        description={description}
-        intro={intro}
-      />
-    </Layout>
-  )
-}
-
-export default IndexPage
+import { TemplateIndexPage } from '../components/templates';
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
@@ -97,3 +40,50 @@ export const pageQuery = graphql`
     }
   }
 `
+
+interface iIndexPageProps {
+  pageResources: any
+  data: {
+    markdownRemark: {
+      frontmatter: {
+        image: any
+        title: string
+        heading: string
+        subheading: string
+        mainpitch: {
+          title: string
+          description: string
+        }
+        description: string
+        intro: {
+          heading: string
+          description: string
+          blurbs: {
+            image: any
+            text: string
+          }[]
+        }
+      }
+    }
+  }
+  pageContext: any
+  pathContext: any
+}
+
+const IndexPage:React.SFC<iIndexPageProps> = props => {
+  return (
+    <Layout>
+      <TemplateIndexPage
+        image={props.data.markdownRemark.frontmatter.image}
+        title={props.data.markdownRemark.frontmatter.title}
+        subheading={props.data.markdownRemark.frontmatter.subheading}
+        mainpitch={props.data.markdownRemark.frontmatter.mainpitch}
+        heading={props.data.markdownRemark.frontmatter.heading}
+        description={props.data.markdownRemark.frontmatter.description}
+        intro={props.data.markdownRemark.frontmatter.intro}
+      />
+    </Layout>
+  )
+}
+
+export default IndexPage
