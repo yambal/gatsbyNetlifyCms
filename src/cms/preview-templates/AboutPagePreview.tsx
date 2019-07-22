@@ -1,8 +1,8 @@
 import React from 'react'
-import { AboutPageTemplate } from '../../GatsbyNodeToTemplate/about-page'
+import TemplateAboutPage from '../../components/templates/TemplateAboutPage';
 
 const AboutPagePreview = ({ entry, widgetFor }) => (
-  <AboutPageTemplate
+  <TemplateAboutPage
     title={entry.getIn(['data', 'title'])}
     content={widgetFor('body')}
     isHtml={false}
