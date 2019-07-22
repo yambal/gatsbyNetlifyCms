@@ -1,12 +1,9 @@
 import React from 'react'
 import Container from '../Container';
-import { HTMLContent } from '../Content';
+import { HTMLContent, iHTMLContentProps } from '../Content';
 
-interface iTemplateAboutPageProps {
+interface iTemplateAboutPageProps extends iHTMLContentProps {
     title: string
-    className?: string
-    content: any
-    isHtml: boolean
 }
 
 const TemplateAboutPage:React.SFC<iTemplateAboutPageProps> = props => {
