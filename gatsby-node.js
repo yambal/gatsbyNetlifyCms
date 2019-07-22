@@ -20,6 +20,22 @@ exports.createPages = ({ actions, graphql }) => {
               templateKey
             }
           }
+          next {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+            }
+          }
+          previous {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+            }
+          }
         }
       }
     }
@@ -33,6 +49,8 @@ exports.createPages = ({ actions, graphql }) => {
 
     posts.forEach(edge => {
       const id = edge.node.id
+      const next = edge.next
+      const prev = edge.previous
 
       createPage({
         path: edge.node.fields.slug,
@@ -43,6 +61,8 @@ exports.createPages = ({ actions, graphql }) => {
         // additional data can be passed via context
         context: {
           id,
+          next,
+          prev
         },
       })
     })
