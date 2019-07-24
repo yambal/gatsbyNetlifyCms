@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import TemplateIndexPage from '../../components/templates/TemplateIndexPage';
 
 const IndexPagePreview = ({ entry, getAsset }) => {
