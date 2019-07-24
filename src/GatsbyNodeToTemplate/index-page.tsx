@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import TemplateIndexPage from '../components/templates/TemplateIndexPage';
-import { iImageInfo } from '../components/PreviewCompatibleImage';
+import { iImageInfo } from '../components/CMSImage';
 
 export interface iIndexPageProps {
   image: iImageInfo

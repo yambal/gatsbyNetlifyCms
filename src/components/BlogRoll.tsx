@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, graphql, StaticQuery } from 'gatsby'
-import PreviewCompatibleImage from './PreviewCompatibleImage'
+import CMSImage from './CMSImage'
 
 interface iBlogRollProps {
   data?: {
@@ -33,7 +33,7 @@ const BlogRoll:React.SFC<iBlogRollProps> = (props) => {
             <article>
               <header>
                 {post.frontmatter.featuredimage ? (
-                  <PreviewCompatibleImage
+                  <CMSImage
                     imageInfo={{
                       image: featuredimage,
                       alt: `${post.title}`,

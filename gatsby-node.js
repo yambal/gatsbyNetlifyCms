@@ -58,7 +58,6 @@ exports.createPages = ({ actions, graphql }) => {
         component: path.resolve(
           `src/GatsbyNodeToTemplate/${String(edge.node.frontmatter.templateKey)}.tsx`
         ),
-        // additional data can be passed via context
         context: {
           id,
           next,

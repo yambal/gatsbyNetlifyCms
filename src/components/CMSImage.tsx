@@ -13,7 +13,7 @@ interface iPreviewCompatibleImageProps {
   imageInfo: iImageInfo
 }
 
-const PreviewCompatibleImage:React.SFC<iPreviewCompatibleImageProps> = (props) => {
+const CMSImage:React.SFC<iPreviewCompatibleImageProps> = (props) => {
   const { alt = '', childImageSharp, image } = props.imageInfo
 
   if (!!image && !!image.childImageSharp) {
@@ -32,4 +32,4 @@ const PreviewCompatibleImage:React.SFC<iPreviewCompatibleImageProps> = (props) =
   return null
 }
 
-export default PreviewCompatibleImage
+export default CMSImage

@@ -1,6 +1,6 @@
 import React from 'react'
 import Container from '../Container';
-import PreviewCompatibleImage from '../PreviewCompatibleImage';
+import CMSImage from '../CMSImage';
 import BlogRoll from '../BlogRoll';
 import { Link } from 'gatsby';
 import { iIndexPageProps } from '../../GatsbyNodeToTemplate/index-page'
@@ -9,7 +9,7 @@ const TemplateIndexPage:React.SFC<iIndexPageProps> = props => {
   return(
     <Container>
       <h1>{props.title}</h1>
-      <PreviewCompatibleImage imageInfo={props.image} />
+      <CMSImage imageInfo={props.image} />
       <h3>{props.subheading}</h3>
       <h1>{props.mainpitch.title}</h1>
       <h3>{props.mainpitch.description}</h3>
@@ -19,9 +19,9 @@ const TemplateIndexPage:React.SFC<iIndexPageProps> = props => {
       <p>{props.intro.description}</p>
       {props.intro.blurbs.map((blurb, index) => (
       <div key={`blurb-${index}`}>
-          <PreviewCompatibleImage imageInfo={blurb.image} />
-          <p>{blurb.text}</p>
-          <hr />
+        <CMSImage imageInfo={blurb.image} />
+        <p>{blurb.text}</p>
+        <hr />
       </div>
       ))}
 
