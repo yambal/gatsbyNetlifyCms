@@ -3,28 +3,9 @@ import Container from '../Container';
 import PreviewCompatibleImage from '../PreviewCompatibleImage';
 import BlogRoll from '../BlogRoll';
 import { Link } from 'gatsby';
+import { iIndexPageProps } from '../../GatsbyNodeToTemplate/index-page'
 
-interface iTemplateIndexPageProps {
-  title: string
-  image: any
-  subheading: string
-  mainpitch: {
-    title: string
-    description: string
-  }
-  heading: string
-  description: string
-  intro: {
-    heading: string
-    description: string
-    blurbs: {
-      image: any
-      text: string
-    }[]
-  }
-}
-
-const TemplateIndexPage:React.SFC<iTemplateIndexPageProps> = props => {
+const TemplateIndexPage:React.SFC<iIndexPageProps> = props => {
   return(
     <Container>
       <h1>{props.title}</h1>
