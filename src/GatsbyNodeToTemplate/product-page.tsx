@@ -1,14 +1,80 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import Container from '../components/Container';
+import TemplateProductPage from '../components/templates/TemplateProductPage';
 
-const ProductPage:React.SFC = (props) => {
+export interface iProductPageProps {
+  title: string
+  image: any
+  heading: string
+  description: string
+  intro: any
+  main: {
+    heading: string
+    description: string
+    image1: {
+      alt: string
+      image: any
+    }
+    image2: {
+      alt: string
+      image: any
+    }
+    image3: {
+      alt: string
+      image: any
+    }
+  }
+  testimonials: {
+    author: string
+    quote: string
+  }[]
+  full_image: any
+  pricing: {
+    heading: string
+    description: string
+    plans: {
+      description: string
+      items: string[]
+      plan: string
+      price: string
+    }
+  }
+}
+
+interface iProductDataProps {
+  location: any
+  data: {
+    markdownRemark: {
+      frontmatter: iProductPageProps
+    }
+  }
+}
+
+const ProductPage:React.SFC<iProductDataProps> = (props) => {
+  const {
+    title,
+    image,
+    description,
+    heading,
+    main,
+    testimonials,
+    pricing,
+    full_image
+  } = props.data.markdownRemark.frontmatter
   return (
     <Layout>
-      <Container>
-        <pre>{JSON.stringify(props, null, 2)}</pre>
-      </Container>
+      <TemplateProductPage
+        title={title}
+        image={image}
+        description={description}
+        heading={heading}
+        intro={props.data.markdownRemark.frontmatter.intro}
+        main={main}
+        testimonials={testimonials}
+        pricing={pricing}
+        full_image={full_image}
+      />
     </Layout>
   )
 }
