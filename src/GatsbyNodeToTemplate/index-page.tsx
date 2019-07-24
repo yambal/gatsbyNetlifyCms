@@ -2,9 +2,10 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import TemplateIndexPage from '../components/templates/TemplateIndexPage';
+import { iImageInfo } from '../components/CMSImage';
 
 export interface iIndexPageProps {
-  image: any
+  image: iImageInfo
   title: string
   heading: string
   subheading: string
@@ -17,7 +18,7 @@ export interface iIndexPageProps {
     heading: string
     description: string
     blurbs: {
-      image: any
+      image: iImageInfo
       text: string
     }[]
   }

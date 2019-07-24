@@ -53,7 +53,7 @@ const BlogPost:React.SFC<iBlogPostProps> = props => {
         nextUri={props.pageContext.next.fields.slug}
       />
       <Container>
-        <pre>{JSON.stringify(props, null, 2)}</pre>
+        <pre>56 {JSON.stringify(props, null, 2)}</pre>
       </Container>
     </Layout>
   )

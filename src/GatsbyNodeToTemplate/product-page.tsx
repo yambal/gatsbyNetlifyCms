@@ -2,34 +2,26 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import TemplateProductPage from '../components/templates/TemplateProductPage';
+import { iImageInfo } from '../components/CMSImage';
 
 export interface iProductPageProps {
   title: string
-  image: any
+  image: iImageInfo
   heading: string
   description: string
   intro: any
   main: {
     heading: string
     description: string
-    image1: {
-      alt: string
-      image: any
-    }
-    image2: {
-      alt: string
-      image: any
-    }
-    image3: {
-      alt: string
-      image: any
-    }
+    image1: iImageInfo
+    image2: iImageInfo
+    image3: iImageInfo
   }
   testimonials: {
     author: string
     quote: string
   }[]
-  full_image: any
+  full_image: iImageInfo
   pricing: {
     heading: string
     description: string
