@@ -10,6 +10,14 @@ module.exports = {
   },
   plugins: [
     {
+      // Instagram
+      // https://www.gatsbyjs.org/packages/gatsby-source-instagram/
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `juneyamamoto`
+      }
+    },
+    {
       resolve: `gatsby-plugin-typescript`,
     },
     {
