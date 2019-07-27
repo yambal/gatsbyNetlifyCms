@@ -67,7 +67,7 @@ export const InstagramIndexPageQuery = graphql`
             publicURL
             childImageSharp {
               id
-              fluid {
+              fluid(traceSVG: {color: "10"}) {
                 tracedSVG
                 aspectRatio
                 src

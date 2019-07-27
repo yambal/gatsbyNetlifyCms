@@ -10,6 +10,14 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `ecvfg1u6ein7`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: '_AFpwJLCkmwQdAuiXsopy7js7dbzOKCCeDQrMkLXyFk',
+      },
+    },
+    {
       // Instagram
       // https://www.gatsbyjs.org/packages/gatsby-source-instagram/
       resolve: `gatsby-source-instagram`,
