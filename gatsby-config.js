@@ -10,6 +10,17 @@ module.exports = {
   },
   plugins: [
     {
+      /**
+       * このプラグインはあなたのビルドファイルをローカルにあるいはNetlifyキャッシュディレクトリにキャッシュします。
+       * それはその後のビルドを大幅にスピードアップします。
+       */
+      // https://github.com/axe312ger/gatsby-plugin-netlify-cache
+      resolve: "gatsby-plugin-netlify-cache",
+      options: {
+        cachePublic: true
+      }
+    },
+    {
       // Instagram
       // https://www.gatsbyjs.org/packages/gatsby-source-instagram/
       resolve: `gatsby-source-instagram`,
