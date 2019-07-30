@@ -1,4 +1,5 @@
 var proxy = require('http-proxy-middleware')
+const tokens = require('./tokens.js')
 
 module.exports = {
   siteMetadata: {
@@ -9,6 +10,14 @@ module.exports = {
     fontAwesomeId: '19c9308f7b'
   },
   plugins: [
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: tokens.contentful.spaceId,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: tokens.contentful.deliveryApiAccessToken,
+      },
+    },
     {
       /**
        * このプラグインはあなたのビルドファイルをローカルにあるいはNetlifyキャッシュディレクトリにキャッシュします。
