@@ -49,7 +49,7 @@ const BlogPost:React.SFC<iBlogPostProps> = props => {
         isHtml={true}
         prevTitle={props.pageContext.prev.frontmatter.title}
         prevUri={props.pageContext.prev.fields.slug}
-        nextTitle={props.pageContext.next.frontmatter.title}
+        nextTitle=""
         nextUri={props.pageContext.next.fields.slug}
       />
       <Container>
