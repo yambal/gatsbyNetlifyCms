@@ -47,10 +47,10 @@ const BlogPost:React.SFC<iBlogPostProps> = props => {
         content={props.data.markdownRemark.html}
         tags={props.data.markdownRemark.frontmatter.tags}
         isHtml={true}
-        prevTitle={props.pageContext.prev.frontmatter.title}
-        prevUri={props.pageContext.prev.fields.slug}
+        prevTitle=""
+        prevUri=""
         nextTitle=""
-        nextUri={props.pageContext.next.fields.slug}
+        nextUri=""
       />
       <Container>
         <pre>56 {JSON.stringify(props, null, 2)}</pre>
