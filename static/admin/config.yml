@@ -20,12 +20,11 @@ collections:
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
-
   - name: "ウェッブサービス"
     label: "webservices"
     folder: "src/pages/web-services"
     create: true
-    slug: "{{id}}"
+    slug: "ws-{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "テンプレート", name: "templateKey", widget: "hidden", default: "web-services-blog-post"}
       - {label: "サービス名", name: "serviceName", widget: "string"}
