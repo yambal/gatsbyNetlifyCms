@@ -17,23 +17,19 @@ interface iAboutPageProps{
   }
 }
 
-const AboutPage:React.SFC<iAboutPageProps> = (props) => {
+const WebServicePost:React.SFC<iAboutPageProps> = (props) => {
   const { html, frontmatter: {title}} = props.data.markdownRemark
   return (
     <Layout>
-      <TemplateAboutPage
-        title={title}
-        content={html}
-        isHtml={true}
-      />
+      <pre></pre>
     </Layout>
   )
 }
 
-export default AboutPage
+export default WebServicePost
 
-export const aboutPageQuery = graphql`
-  query AboutPage($id: String!) {
+export const webServiceQuery = graphql`
+  query WebServicePage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
