@@ -20,8 +20,8 @@ collections:
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
-  - name: "ウェッブサービス"
-    label: "webservices"
+  - name: "webservices"
+    label: "ウェッブサービス"
     folder: "src/pages/web-services"
     create: true
     slug: "ws-{{year}}-{{month}}-{{day}}-{{slug}}"
