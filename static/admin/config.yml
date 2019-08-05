@@ -31,7 +31,6 @@ collections:
       - {label: "サービス名", name: "serviceName", widget: "string"}
       - {label: "公開日", name: "date", widget: "datetime"}
       - {label: "サービスキャッチフレーズ", name: "catch", widget: "text"}
-      - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "本文", name: "body", widget: "markdown"}
       - {label: "タグ", name: "tags", widget: "list"}
