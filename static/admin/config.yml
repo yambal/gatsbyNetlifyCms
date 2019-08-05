@@ -25,9 +25,11 @@ collections:
     folder: "src/pages/web-services"
     create: true
     slug: "ws-{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: "serviceNameEn"
     fields:
       - {label: "テンプレート", name: "templateKey", widget: "hidden", default: "web-services-blog-post"}
-      - {label: "サービス名", name: "serviceName", widget: "string"}
+      - {label: "サービス名(Ja)", name: "serviceNameJa", widget: "string"}
+      - {label: "サービス名(En)", name: "serviceNameEn", widget: "string"}
       - {label: "公開日", name: "date", widget: "datetime"}
       - {label: "サービスキャッチフレーズ", name: "catch", widget: "text"}
       - {label: "Featured Image", name: "featuredimage", widget: image}
