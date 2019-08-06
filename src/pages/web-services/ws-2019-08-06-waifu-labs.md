@@ -13,3 +13,9 @@ tags:
 ![俺の嫁 3号](/img/waifu-2-.png "俺の嫁 3号")
 
 ![俺の嫁 2号](/img/waifu-1-.png "俺の嫁 2号")
+
+![俺の嫁 4号](/img/waifu-3-.png "俺の嫁 4号")
+
+![俺の嫁 5号](/img/waifu-4-.png "俺の嫁 5号")
+
+![俺の嫁 6号](/img/waifu-5-.png "俺の嫁 6号")
