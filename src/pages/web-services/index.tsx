@@ -4,41 +4,15 @@ import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import Layout from '../../components/Layout'
 
-const TagsPage = ({
-  data: {
-    allMarkdownRemark: { group },
-    site: {
-      siteMetadata: { title },
-    },
-  },
-}) => (
+const WebServices = (props) => (
   <Layout>
     <section className="section">
-      <Helmet title={`Tags | ${title}`} />
-      <div className="container content">
-        <div className="columns">
-          <div
-            className="column is-10 is-offset-1"
-            style={{ marginBottom: '6rem' }}
-          >
-            <h1 className="title is-size-2 is-bold-light">Tags</h1>
-            <ul className="taglist">
-              {group.map(tag => (
-                <li key={tag.fieldValue}>
-                  <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                    {tag.fieldValue} ({tag.totalCount})
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
+        <pre>{JSON.stringify(props, null, 2)}</pre>
     </section>
   </Layout>
 )
 
-export default TagsPage
+export default WebServices
 
 export const WebServiceQuery = graphql`
   query WebServiceQuery {
@@ -47,10 +21,22 @@ export const WebServiceQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(limit: 1000) {
-      group(field: frontmatter___tags) {
-        fieldValue
-        totalCount
+    allMarkdownRemark(limit: 1000, filter: {frontmatter: {templateKey: {eq: "web-services"}}}) {
+      edges {
+        node {
+          frontmatter {
+            serviceNameJa
+            tags
+            featuredimage {
+              childImageSharp {
+                id
+              }
+              publicURL
+            }
+            catch
+          }
+          id
+        }
       }
     }
   }
