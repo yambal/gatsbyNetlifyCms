@@ -1,5 +1,5 @@
 ---
-templateKey: web-services-blog-post
+templateKey: web-services
 serviceNameJa: WAIFU LABS
 serviceNameEn: WAIFU LABS
 date: 2019-08-05T14:53:45.128Z

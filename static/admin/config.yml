@@ -27,7 +27,7 @@ collections:
     slug: "ws-{{year}}-{{month}}-{{day}}-{{slug}}"
     identifier_field: "serviceNameEn"
     fields:
-      - {label: "テンプレート", name: "templateKey", widget: "hidden", default: "web-services-blog-post"}
+      - {label: "テンプレート", name: "templateKey", widget: "hidden", default: "web-services"}
       - {label: "サービス名(Ja)", name: "serviceNameJa", widget: "string"}
       - {label: "サービス名(En)", name: "serviceNameEn", widget: "string"}
       - {label: "公開日", name: "date", widget: "datetime"}
