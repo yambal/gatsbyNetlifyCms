@@ -41,7 +41,7 @@ const Navbar:React.SFC<iNavbarProps> = (props) => {
             <Link className="navbar-item" to="/contact/StyledComponentSample">
               <IconVilal /> StyledComponent Sample
             </Link>
-            <Link className="navbar-item" to="/web-service">
+            <Link className="navbar-item" to="/web-services">
               <IconVilal /> Web Services
             </Link>
           </div>
