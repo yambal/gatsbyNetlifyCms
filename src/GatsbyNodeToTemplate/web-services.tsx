@@ -3,15 +3,28 @@ import Layout from '../components/Layout'
 import Container from '../components/Container';
 import { graphql } from 'gatsby'
 import TemplateWebService from '../components/templates/TemplateWebService';
+import { HTMLContent, iHTMLContentProps } from '../components/Content';
 
 interface iWebServiceProps{
+  data: any
 }
 
 const WebService:React.SFC<iWebServiceProps> = props => {
+  const {
+    html,
+    frontmatter
+  } = props.data.markdownRemark
   return (
     <Layout>
       <Container>
-        <pre>56 {JSON.stringify(props, null, 2)}</pre>
+        <TemplateWebService
+          title={frontmatter.serviceNameJa}
+          description={frontmatter.catch}
+          tags={frontmatter.tags}
+          content={html}
+          isHtml={true}
+        />
+        <pre>24 {JSON.stringify(props, null, 2)}</pre>
       </Container>
     </Layout>
   )
@@ -26,8 +39,8 @@ export const pageQuery = graphql`
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
-        title
-        description
+        serviceNameJa
+        catch
         tags
       }
     }
