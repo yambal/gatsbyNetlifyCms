@@ -9,6 +9,7 @@ module.exports = {
     fontAwesomeId: '19c9308f7b'
   },
   plugins: [
+    'gatsby-plugin-extract-image-colors', // https://www.gatsbyjs.org/packages/gatsby-plugin-extract-image-colors/?=vibrant
     {
       /**
        * このプラグインはあなたのビルドファイルをローカルにあるいはNetlifyキャッシュディレクトリにキャッシュします。
