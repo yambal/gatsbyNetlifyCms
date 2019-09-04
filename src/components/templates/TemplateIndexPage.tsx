@@ -4,11 +4,16 @@ import CMSImage from '../CMSImage';
 import BlogRoll from '../BlogRoll';
 import { Link } from 'gatsby';
 import { iIndexPageProps } from '../../GatsbyNodeToTemplate/index-page'
+import styled from "styled-components"
+
+const Title = styled.h1`
+  color: red;
+`
 
 const TemplateIndexPage:React.SFC<iIndexPageProps> = props => {
   return(
     <Container>
-      <h1>{props.title}</h1>
+      <Title >{props.title}</Title >
       <CMSImage imageInfo={props.image} />
       <h3>{props.subheading}</h3>
       <h1>{props.mainpitch.title}</h1>
