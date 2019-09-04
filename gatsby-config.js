@@ -9,6 +9,7 @@ module.exports = {
     fontAwesomeId: '19c9308f7b'
   },
   plugins: [
+    'gatsby-plugin-styled-components', // https://www.gatsbyjs.org/docs/styled-components/
     'gatsby-plugin-extract-image-colors', // https://www.gatsbyjs.org/packages/gatsby-plugin-extract-image-colors/?=vibrant
     {
       /**

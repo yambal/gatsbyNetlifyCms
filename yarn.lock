@@ -1781,6 +1781,14 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-native@*":
+  version "0.60.11"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.60.11.tgz#c797f89180291c3a1d6f573f1e89644c8c17f60e"
+  integrity sha512-JAe7/UCGhnXxTwHCix1Gs6EbbCTeqU8TxxKHKNrsVtECZ9cPYp1UmJoDIDaNTz8o1/9nTFOtPj7CvHp2hWpEIQ==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/react" "*"
+
 "@types/react@*", "@types/react@^16.8.12", "@types/react@^16.8.6":
   version "16.8.20"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.20.tgz#4f633ecbd0a4d56d0ccc50fff6f9321bbcd7d583"
@@ -1795,6 +1803,15 @@
   integrity sha512-abkEOIeljniUN9qB5onp++g0EY38h7atnDHxwKUFz1r3VH1+yG1OKi2sNPTyObL40goBmfKFpdii2lEzwLX1cA==
   dependencies:
     "@types/prop-types" "*"
+    csstype "^2.2.0"
+
+"@types/styled-components@^4.1.18":
+  version "4.1.18"
+  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-4.1.18.tgz#348804fe5a399ae0a46550afaf030085815ad931"
+  integrity sha512-VrHkgvjbxQXOw0xWSUckusUUZ4y/jqN1u7kF29ngh0oE6uOrlZHleTgqeUqylQqHQIeQ8MxFb50BRHy8ju5DHg==
+  dependencies:
+    "@types/react" "*"
+    "@types/react-native" "*"
     csstype "^2.2.0"
 
 "@types/tmp@^0.0.32":
