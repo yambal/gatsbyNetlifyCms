@@ -80,9 +80,7 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
-        featuredimage {
-          publicURL
-        }
+        featuredimage
         heading
         subheading
         mainpitch {
