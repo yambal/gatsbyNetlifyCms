@@ -20,10 +20,7 @@ const WebService:React.SFC<iWebServiceProps> = props => {
     <Layout>
       <Container>
         <div style={{position: "relative"}}>
-          <Img
-            fluid={frontmatter.featuredimage.childImageSharp.fluid}
-            alt=""
-          />
+
         </div>
         <TemplateWebService
           title={frontmatter.serviceNameJa}
