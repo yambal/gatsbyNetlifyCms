@@ -3,20 +3,7 @@ import { Link, graphql, StaticQuery } from 'gatsby'
 import CMSImage from './CMSImage'
 
 interface iBlogRollProps {
-  data?: {
-    allMarkdownRemark:{
-      edges: {
-        node: {
-          frontmatter: any
-          title: string
-          excerpt: string
-          fields: {
-            slug: string
-          }
-        }
-      }[]
-    }
-  }
+  data?: any
   count?: any
 }
 
