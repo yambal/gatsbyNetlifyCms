@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: 良心のある素晴らしいコーヒー
-catchimageHome: /img/00100lportrait_00100_burst20190901201926978_cover.jpg
+catchimageHome: /img/img_20190606_095241.jpg
 heading: 良心のある素晴らしいコーヒー
 subheading: ' カップを楽しみながら持続可能な農業を支援する'
 mainpitch:
