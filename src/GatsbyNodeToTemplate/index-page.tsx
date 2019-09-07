@@ -5,7 +5,7 @@ import TemplateIndexPage from '../components/templates/TemplateIndexPage';
 import { iImageInfo } from '../components/CMSImage';
 
 export interface iIndexPageProps {
-  image: {
+  featuredimage : {
     publicURL: string
     childImageSharp: any
     colors: {
@@ -48,7 +48,7 @@ interface iIndexDataProps {
 
 const IndexPage:React.SFC<iIndexDataProps> = (props) => {
   const {
-    image,
+    featuredimage,
     title,
     subheading,
     mainpitch,
@@ -60,7 +60,7 @@ const IndexPage:React.SFC<iIndexDataProps> = (props) => {
     <Layout>
       <TemplateIndexPage
         title={title}
-        image={image}
+        image={featuredimage}
         subheading={subheading}
         mainpitch={mainpitch}
         heading={heading}
