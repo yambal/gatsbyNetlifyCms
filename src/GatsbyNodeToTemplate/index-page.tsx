@@ -49,7 +49,7 @@ interface iIndexDataProps {
 const IndexPage:React.SFC<iIndexDataProps> = (props) => {
   console.log(51, props)
   const {
-    catchimageHome,
+    featuredimage,
     title,
     subheading,
     mainpitch,
@@ -62,7 +62,7 @@ const IndexPage:React.SFC<iIndexDataProps> = (props) => {
     <Layout>
       <TemplateIndexPage
         title={title}
-        featuredimage={catchimageHome}
+        featuredimage={featuredimage}
         subheading={subheading}
         mainpitch={mainpitch}
         heading={heading}
@@ -80,7 +80,7 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
-        catchimageHome
+        featuredimage
         heading
         subheading
         mainpitch {
