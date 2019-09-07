@@ -2,7 +2,7 @@ import React from 'react'
 // import Container from '../Container';
 import Container from '@material-ui/core/Container';
 import CMSImage from '../CMSImage';
-import BlogRoll from '../BlogRoll';
+// import BlogRoll from '../BlogRoll';
 import { Link } from 'gatsby';
 import { iIndexPageProps } from '../../GatsbyNodeToTemplate/index-page'
 import styled from "styled-components"
@@ -30,14 +30,14 @@ const TemplateIndexPage:React.SFC<iIndexPageProps> = props => {
 
   return(
     <React.Fragment>
-      <JumboTron
+      {props.featuredimage && <JumboTron
         backgroundImage={props.featuredimage.publicURL}
         colors={props.featuredimage.colors}>
           <Container fixed>
           <div>{props.title}</div>
           <div>{props.subheading}</div>
           </Container>
-      </JumboTron>
+      </JumboTron>}
       <pre>{JSON.stringify(props, null, 2)}</pre>
     <Container fixed>
       <h3>{props.subheading}</h3>
@@ -56,7 +56,7 @@ const TemplateIndexPage:React.SFC<iIndexPageProps> = props => {
       ))}
 
       <h3>BlogRoll</h3>
-      <BlogRoll />
+      BlogRoll
       <Link className="btn" to="/blog">
       Read more
       </Link>

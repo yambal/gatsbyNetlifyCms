@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import CMSImage from './CMSImage'
-
+/*
 interface iBlogRollProps {
   data?: any
   count?: any
@@ -79,3 +79,4 @@ export default () => (
     render={(data, count) => <BlogRoll data={data} count={count} />}
   />
 )
+*/

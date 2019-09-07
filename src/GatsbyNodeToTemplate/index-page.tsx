@@ -39,7 +39,7 @@ interface iIndexDataProps {
   pageResources: any
   data: {
     markdownRemark: {
-      frontmatter: iIndexPageProps
+      frontmatter: any
     }
   }
   pageContext: any
@@ -47,6 +47,7 @@ interface iIndexDataProps {
 }
 
 const IndexPage:React.SFC<iIndexDataProps> = (props) => {
+  console.log(51, props)
   const {
     featuredimage,
     title,
@@ -56,6 +57,7 @@ const IndexPage:React.SFC<iIndexDataProps> = (props) => {
     description,
     intro
   } = props.data.markdownRemark.frontmatter
+
   return (
     <Layout>
       <TemplateIndexPage
