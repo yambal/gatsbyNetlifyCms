@@ -27,13 +27,6 @@ const WebServices = (props) => {
           const { colors: colors } = edge.node.frontmatter.featuredimage
           return (
             <div>
-              <Img
-                fluid={edge.node.frontmatter.featuredimage.childImageSharp.fluid}
-                objectFit="cover"
-                objectPosition="50% 50%"
-                alt=""
-                style={{ width: '150px', height: '150px' }}
-              />
               <Link to={edge.node.fields.slug}>{edge.node.frontmatter.serviceNameJa}</Link>
 
               <span style={{ color: colors.vibrant }} >{colors.vibrant}</span>
@@ -73,22 +66,6 @@ export const WebServiceQuery = graphql`
           frontmatter {
             serviceNameJa
             tags
-            featuredimage {
-              childImageSharp {
-                fluid(maxWidth: 1280) {
-                  ...GatsbyImageSharpFluid_noBase64
-                }
-              }
-              publicURL
-              colors {
-                vibrant
-                muted
-                lightVibrant
-                lightMuted
-                darkVibrant
-                darkMuted
-              }
-            }
             catch
           }
         }

@@ -50,13 +50,7 @@ export const pageQuery = graphql`
         serviceNameJa
         catch
         tags
-        featuredimage {
-          childImageSharp {
-            fluid(maxWidth: 1280) {
-              ...GatsbyImageSharpFluid_noBase64
-            }
-          }
-        }
+        
       }
     }
   }
