@@ -5,7 +5,18 @@ import TemplateIndexPage from '../components/templates/TemplateIndexPage';
 import { iImageInfo } from '../components/CMSImage';
 
 export interface iIndexPageProps {
-  image: iImageInfo
+  image: {
+    publicURL: string
+    childImageSharp: any
+    colors: {
+      darkMuted: string
+      darkVibrant: string
+      lightMuted: string
+      lightVibrant: string
+      muted: string
+      vibrant: string
+    }
+  }
   title: string
   heading: string
   subheading: string
@@ -68,10 +79,19 @@ export const pageQuery = graphql`
       frontmatter {
         title
         image {
+          publicURL
           childImageSharp {
             fluid(maxWidth: 2048, quality: 100) {
               ...GatsbyImageSharpFluid
             }
+          }
+          colors {
+            darkMuted
+            darkVibrant
+            lightMuted
+            lightVibrant
+            muted
+            vibrant
           }
         }
         heading
