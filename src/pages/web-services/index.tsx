@@ -27,8 +27,6 @@ const WebServices = (props) => {
             <div>
               <Img
                 fluid={edge.node.frontmatter.featuredimage.childImageSharp.fluid}
-                objectFit="cover"
-                objectPosition="50% 50%"
                 alt=""
                 style={{ width: '150px', height: '150px' }}
               />
