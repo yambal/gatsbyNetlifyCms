@@ -30,7 +30,14 @@ const TemplateIndexPage:React.SFC<iIndexPageProps> = props => {
 
   return(
     <React.Fragment>
-
+      <JumboTron
+        backgroundImage={props.featuredimage.publicURL}
+        colors={props.featuredimage.colors}>
+          <Container fixed>
+          <div>{props.title}</div>
+          <div>{props.subheading}</div>
+          </Container>
+      </JumboTron>
       <pre>{JSON.stringify(props, null, 2)}</pre>
     <Container fixed>
       <h3>{props.subheading}</h3>
