@@ -20,10 +20,7 @@ const WebService:React.SFC<iWebServiceProps> = props => {
     <Layout>
       <Container>
         <div style={{position: "relative"}}>
-          <Img
-            fluid={frontmatter.featuredimage.childImageSharp.fluid}
-            alt=""
-          />
+
         </div>
         <TemplateWebService
           title={frontmatter.serviceNameJa}
@@ -50,13 +47,7 @@ export const pageQuery = graphql`
         serviceNameJa
         catch
         tags
-        featuredimage {
-          childImageSharp {
-            fluid(maxWidth: 1280) {
-              ...GatsbyImageSharpFluid_noBase64
-            }
-          }
-        }
+        
       }
     }
   }
