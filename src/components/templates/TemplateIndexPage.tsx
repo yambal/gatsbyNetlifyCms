@@ -13,6 +13,9 @@ const Title = styled.h1`
 
 const TemplateIndexPage:React.SFC<iIndexPageProps> = props => {
   return(
+    <React.Fragment>
+      <div style={{backgroundImage: 'url(https://placehold.jp/150x150.png)', height: '400px'}}>123</div>
+    
     <Container fixed>
       <Title >{props.title}</Title >
       <CMSImage imageInfo={props.image} />
@@ -38,6 +41,7 @@ const TemplateIndexPage:React.SFC<iIndexPageProps> = props => {
       </Link>
 
     </Container>
+    </React.Fragment>
   )
 }
 

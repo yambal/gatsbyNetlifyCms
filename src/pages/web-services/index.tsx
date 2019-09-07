@@ -20,7 +20,9 @@ const WebServices = (props) => {
 
   return (
     <Layout>
+      
       <Container>
+      
         {edges.map((edge, index) => {
           const { colors: colors } = edge.node.frontmatter.featuredimage
           return (
