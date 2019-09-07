@@ -80,22 +80,7 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
-        image {
-          publicURL
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-          colors {
-            darkMuted
-            darkVibrant
-            lightMuted
-            lightVibrant
-            muted
-            vibrant
-          }
-        }
+        featuredimage
         heading
         subheading
         mainpitch {
