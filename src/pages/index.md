@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: 良心のある素晴らしいコーヒー
-image: /img/home-jumbotron.jpg
+featuredimage: /img/home-jumbotron.jpg
 heading: 良心のある素晴らしいコーヒー
 subheading: ' カップを楽しみながら持続可能な農業を支援する'
 mainpitch:
