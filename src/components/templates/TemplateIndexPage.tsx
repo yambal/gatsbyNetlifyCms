@@ -1,5 +1,6 @@
 import React from 'react'
-import Container from '../Container';
+// import Container from '../Container';
+import Container from '@material-ui/core/Container';
 import CMSImage from '../CMSImage';
 import BlogRoll from '../BlogRoll';
 import { Link } from 'gatsby';
@@ -12,7 +13,7 @@ const Title = styled.h1`
 
 const TemplateIndexPage:React.SFC<iIndexPageProps> = props => {
   return(
-    <Container>
+    <Container fixed>
       <Title >{props.title}</Title >
       <CMSImage imageInfo={props.image} />
       <h3>{props.subheading}</h3>

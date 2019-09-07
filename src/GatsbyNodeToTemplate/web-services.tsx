@@ -8,7 +8,7 @@ import Img from "gatsby-image"
 import { relative } from 'upath';
 
 interface iWebServiceProps{
-  data: any
+  data?: any
 }
 
 const WebService:React.SFC<iWebServiceProps> = props => {
@@ -22,8 +22,6 @@ const WebService:React.SFC<iWebServiceProps> = props => {
         <div style={{position: "relative"}}>
           <Img
             fluid={frontmatter.featuredimage.childImageSharp.fluid}
-            objectFit="cover"
-            objectPosition="50% 50%"
             alt=""
           />
         </div>
