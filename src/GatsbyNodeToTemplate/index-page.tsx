@@ -60,7 +60,7 @@ const IndexPage:React.SFC<iIndexDataProps> = (props) => {
     <Layout>
       <TemplateIndexPage
         title={title}
-        image={featuredimage}
+        featuredimage={featuredimage}
         subheading={subheading}
         mainpitch={mainpitch}
         heading={heading}
