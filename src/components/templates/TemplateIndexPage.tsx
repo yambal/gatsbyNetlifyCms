@@ -24,14 +24,16 @@ const JumboTron = styled.div<iJumboTron>`
   height: 56vw;
   ${props => props.backgroundImage ? `background-image: url(${props.backgroundImage});` : null}
   color: ${props => props.colors ? props.colors.lightMuted: null};
+  background-size: cover;
+  
 `
 
-const TemplateIndexPage:React.SFC<iIndexPageProps> = props => {
+const TemplateIndexPage:React.SFC<any> = props => {
 
   return(
     <React.Fragment>
       {props.featuredimage && <JumboTron
-        backgroundImage={props.featuredimage.publicURL}
+        backgroundImage={props.featuredimage}
         colors={props.featuredimage.colors}>
           <Container fixed>
           <div>{props.title}</div>
