@@ -24,21 +24,11 @@ const WebServices = (props) => {
       <Container>
       
         {edges.map((edge, index) => {
-          const { colors: colors } = edge.node.frontmatter.featuredimage
           return (
             <div>
               <Link to={edge.node.fields.slug}>{edge.node.frontmatter.serviceNameJa}</Link>
-
-              <span style={{ color: colors.vibrant }} >{colors.vibrant}</span>
-              <span style={{ color: colors.muted }} >{colors.muted}</span>
-              <span style={{ color: colors.lightVibrant }} >{colors.lightVibrant}</span>
-              <span style={{ color: colors.lightMuted }} >{colors.lightMuted}</span>
-              <span style={{ color: colors.darkVibrant }} >{colors.darkVibrant}</span>
-              <span style={{ color: colors.darkMuted }} >{colors.darkMuted}</span>
-
               <p>{edge.node.frontmatter.catch}</p>
               <pre>{JSON.stringify(edge, null, 2)}</pre>
-              <pre>{JSON.stringify(colors, null, 2)}</pre>
             </div>
           )
         })}
