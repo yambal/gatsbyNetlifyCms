@@ -7,18 +7,39 @@ import { Link } from 'gatsby';
 import { iIndexPageProps } from '../../GatsbyNodeToTemplate/index-page'
 import styled from "styled-components"
 
-const Title = styled.h1`
-  color: red;
+interface iJumboTron {
+  backgroundImage?: string
+  colors?: {
+    darkMuted: string
+    darkVibrant: string
+    lightMuted: string
+    lightVibrant: string
+    muted: string
+    vibrant: string
+  }
+}
+
+const JumboTron = styled.div<iJumboTron>`
+  width: 100vw;
+  height: 56vw;
+  ${props => props.backgroundImage ? `background-image: url(${props.backgroundImage});` : null}
+  color: ${props => props.colors ? props.colors.lightMuted: null};
 `
 
 const TemplateIndexPage:React.SFC<iIndexPageProps> = props => {
+
   return(
     <React.Fragment>
-      <div style={{backgroundImage: 'url(https://placehold.jp/150x150.png)', height: '400px'}}>123</div>
-    
+      <JumboTron
+        backgroundImage={props.image.publicURL}
+        colors={props.image.colors}>
+          <Container fixed>
+            <div>{props.title}</div>
+            <div>{props.subheading}</div>
+          </Container>
+      </JumboTron>
+      <pre>{JSON.stringify(props, null, 2)}</pre>
     <Container fixed>
-      <Title >{props.title}</Title >
-      <CMSImage imageInfo={props.image} />
       <h3>{props.subheading}</h3>
       <h1>{props.mainpitch.title}</h1>
       <h3>{props.mainpitch.description}</h3>
